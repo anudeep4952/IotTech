@@ -1,0 +1,16 @@
+{% extends 'part1/base.html' %}
+{% block content %}
+  {{ l }}
+     <div  style="width:100%;height:100%;font-family: Comic Sans MS, cursive, sans-serif;color: lightskyblue;padding-top: 10%;">
+              <p style="font-size:4rem;color:lightpink;padding-left: 35%    " ><strong>UPLOAD FILE</strong></p>
+              <form method="post" enctype="multipart/form-data" style="font-size: 2rem;padding-left: 35%">
+    {% csrf_token %}
+       <p> <input type="hidden" name="userid" value={{ s }} maxlength="255" id="id_userid"></p>
+<p><label for="id_description">Description:</label> <input type="text" name="description" maxlength="255" id="id_description"></p><br>
+<p><label for="id_document">Document:</label> <input style="background-color: lightslategrey;color: #2b2b2b" type="file"  name="document" required id="id_document"></p>
+    <br><button type="submit" class="btn-round btn btn-success  d-inline-flex" style="font-size: 1.75rem">Upload</button>
+  </form>
+          </div>
+
+
+{% endblock  %}

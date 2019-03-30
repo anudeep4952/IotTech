@@ -1,0 +1,31 @@
+{% extends 'part1/base.html' %}
+{%load staticfiles %}
+{% block content %}
+
+<div style="padding-top: 10%;padding-left: 28%">
+      <p style=";color: cadetblue;font-size: 4rem;font-family: Comic Sans MS, cursive, sans-serif;border-collapse: separate;padding-left: 10rem">YOUR FILES</p>
+
+    <table border="8px" style="text-align: center;border-collapse: collapse; width: 100%;border-color: black" >
+           <tr style="width: 100%;border-style: groove;border: 2px">
+            <th style="font-size:2rem;color: #ffc107">file name</th>
+            <th style="font-size:2rem;color: #ffc107">description</th>
+            <th style="font-size:2rem;color: #ffc107">uploaded date & time</th>
+            <th style="font-size:2rem;color: #ffc107">share</th>
+
+        </tr>
+
+
+             {% for i in l %}
+  <tr style="color: mistyrose;font-size: 1.5rem">
+            <td>{{ i.name  }}</td>
+        <td>{{ i.description }}</td>
+        <td>{{ i.uploaded_at }}</td>
+      <td> <a href="http://127.0.0.1:8000/loggedin/files/{{ i.document }}/"><img style="width: 7rem; height:3rem;" alt="Image description" src="{% static 'part1/images/share1.jpg' %}"/></a></td>
+        </tr>
+         {% endfor %}
+    </table>
+</div>
+
+
+
+{% endblock %}
